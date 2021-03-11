@@ -3,7 +3,8 @@ import random
 from bs4 import BeautifulSoup
 
 
-url_base = '/blog/docs/'
+with open('assets/url_base.txt', 'r') as f:
+    url_base = f.read()
 
 with open('assets/layout.html', 'r') as f:
     layout = f.read()
