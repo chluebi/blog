@@ -1,0 +1,74 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, sans-serif;
+    color: black;
+    font-size: 20px;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+h1 {
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 1rem;
+}
+
+a:hover {
+    color: rgb(153, 153, 153);
+}
+
+a:visited {
+    color: rgb(48, 48, 48);
+}
+
+.button {
+    text-align: center;
+}
+
+#navbar {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, minmax(100px, 20rem));
+    grid-template-rows: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    #navbar {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(3, minmax(50px, 5rem));
+    }
+}
+
+#navbar > .button {
+    font-size: 2rem;
+}
+
+
+
+#content {
+    grid-area: content;
+    padding-top: 3rem;
+    width: 40rem;
+}
+
+@media only screen and (max-width: 700px) {
+    #content {
+        width: 100%;
+    }
+}
+
+
+main {
+    display: grid;
+    justify-content: center;
+}
+
+#article-header {
+    border-bottom: 1px solid;
+}
