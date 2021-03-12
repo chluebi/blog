@@ -70,6 +70,18 @@ a:visited {
 }
 
 
+#site-title {
+    font-size: 5rem;
+    padding: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    background-color: black;
+
+    border-style: solid 2px black;
+    border-radius: 5px;
+}
+
+
 main {
     display: grid;
     justify-content: center;
