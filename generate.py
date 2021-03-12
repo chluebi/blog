@@ -22,6 +22,7 @@ def load_article(path, id):
 
     attributes = {'text': text}
 
+    attributes['id'] = int(soup.find(id='id').contents[0])
     attributes['title'] = soup.find(id='title').contents[0]
     attributes['link'] = url_base + 'articles/' + '_'.join(attributes['title'].split()).lower() + '.html'
     attributes['description'] = soup.find(id='description').contents[0]
@@ -37,7 +38,7 @@ def load_articles():
         attributes = load_article(path, id)
         articles.append(attributes)
 
-    return articles
+    return sorted(articles, key=lambda x: x['id'])
 
 
 articles = load_articles()
