@@ -71,11 +71,14 @@ a:visited {
 
 
 #site-title {
-    font-size: 5rem;
+    margin: 2rem;
     padding: 1rem;
     font-family: 'Courier New', Courier, monospace;
     color: white;
     background-color: black;
+
+    text-align: center;
+    font-size: 5rem;
 
     border-style: solid 2px black;
     border-radius: 5px;
