@@ -78,6 +78,33 @@ def generate_index():
     with open('docs/index.html', 'w+') as f:
         f.write(index)
 
+def generate_all():
+    with open('assets/all.html', 'r') as f:
+        index = f.read()
+
+    article_list = []
+
+    for article in articles:
+
+        title = article['title']
+        description = article['description'][:300]
+        link = article['link']
+
+        text = f'''
+        <a class="article-preview">
+            <a href="{link}"> <h2>{title} </h2> </a>
+            <p>{description}</p>
+        </a>
+        '''
+        article_list.append(text)
+
+    index = index.replace('<articles/>', ''.join(article_list))
+
+    index = layout.replace('<content/>', index)
+
+    with open('docs/all.html', 'w+') as f:
+        f.write(index)
+
 
 def generate_articles():
     for article in os.listdir('articles'):
@@ -98,3 +125,4 @@ def generate_articles():
 if __name__ == '__main__':
     generate_articles()
     generate_index()
+    generate_all()
